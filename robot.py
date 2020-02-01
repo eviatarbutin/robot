@@ -31,9 +31,9 @@ class MyRobot(MagicRobot):
         self.intake_master_saving_roller = WPI_TalonSRX()  # some port
         self.intake_slave_saving_roller = WPI_TalonSRX()  # some port
 
-        self.elevator_micro_switch = DigitalInput()
-        self.elevator_master_raiser = WPI_TalonSRX()
-        self.elevator_slave_raiser = WPI_TalonSRX()
+        self.elevator_micro_switch = DigitalInput()  # some port
+        self.elevator_master_raiser = WPI_TalonSRX()  # some port
+        self.elevator_slave_raiser = WPI_TalonSRX()  # some port
 
         self.pusher_disk_pusher = DoubleSolenoid(0, 1)
 
