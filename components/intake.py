@@ -2,16 +2,17 @@ from ctre import WPI_TalonSRX, FeedbackDevice
 from wpilib.drive import DifferentialDrive
 from wpilib import DigitalInput
 
+
 class Intake:
-    master_raiser : WPI_TalonSRX
-    slave_raiser : WPI_TalonSRX #follows after the right one
+    master_raiser: WPI_TalonSRX
+    slave_raiser: WPI_TalonSRX
     micro_switch: DigitalInput
-    max_speed=0.6
+    max_speed = 0.6
     min_speed = 0
     up = True
 
     master_roller: WPI_TalonSRX
-    slave_roller : WPI_TalonSRX
+    slave_roller: WPI_TalonSRX
     rolling = False
     max_rolling_speed = 0.7
     min_rolling_speed = 0

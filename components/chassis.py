@@ -2,19 +2,22 @@ from ctre import WPI_TalonSRX, FeedbackDevice
 from wpilib.drive import DifferentialDrive
 
 from navx import AHRS
-#from physics import PhysicsEngine
+
+# from physics import PhysicsEngine
 """
 import wpilib.serialport as s
 d=s.SerialPort(baudRate=5,port=s.SerialPort.Port.kUSB)
 d.getBytesReceived()
 """
 
+
 class Chassis:
     left_master: WPI_TalonSRX
     left_slave: WPI_TalonSRX
     right_master: WPI_TalonSRX
     right_slave: WPI_TalonSRX
-    #navx: AHRS
+
+    # navx: AHRS
 
     def __init__(self):
         self.teleop = False
@@ -65,8 +68,8 @@ class Chassis:
         self.right_motor_speed = right
         self.left_master.set(self.left_motor_speed)
         self.right_master.set(self.right_motor_speed)
-        #self.diff_drive.leftMotor.set(left)
-        #self.diff_drive.rightMotor.set(right)
+        # self.diff_drive.leftMotor.set(left)
+        # self.diff_drive.rightMotor.set(right)
 
     def set_speed(self, y_speed, z_speed):
         self.y_speed = y_speed
@@ -81,11 +84,10 @@ class Chassis:
             self.diff_drive.arcadeDrive(self.y_speed, self.z_speed)
         elif self.autonomous:
             pass
-            #print("chassis", self.left_motor_speed, self.right_motor_speed)
-            #self.diff_drive.leftMotor.set(self.left_motor_speed)
-            #self.diff_drive.rightMotor.set(self.right_motor_speed)
-            #self.left_master.set(ControlMode.PercentOutput, self.left_motor_speed)
-            #self.right_master.set(ControlMode.PercentOutput, self.right_motor_speed)
-            #self.left_master.set(self.left_motor_speed)
-            #self.right_master.set(self.right_motor_speed)
-
+            # print("chassis", self.left_motor_speed, self.right_motor_speed)
+            # self.diff_drive.leftMotor.set(self.left_motor_speed)
+            # self.diff_drive.rightMotor.set(self.right_motor_speed)
+            # self.left_master.set(ControlMode.PercentOutput, self.left_motor_speed)
+            # self.right_master.set(ControlMode.PercentOutput, self.right_motor_speed)
+            # self.left_master.set(self.left_motor_speed)
+            # self.right_master.set(self.right_motor_speed)
