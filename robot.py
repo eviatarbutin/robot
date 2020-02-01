@@ -17,8 +17,9 @@ class MyRobot(magicbot):
 
     def teleopPeriodic(self):
         if self.Joystick.getTriggerReleased():
-            self.shooter.execute()
-
+            self.shooter.shoot()
+        else:
+            self.shooter.stop_shooting()
 
 
 
