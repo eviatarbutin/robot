@@ -22,6 +22,7 @@ class Intake:
     save_rolling = False
     max_save_rolling_speed = 0.7
     min_save_rolling_speed = 0
+    just_pressed = False
 
     def setup(self):
         self.slave_raiser.follow(self.master_raiser)
@@ -55,6 +56,9 @@ class Intake:
         else:
             self.master_saving_roller.set(self.min_save_rolling_speed)
 
+    def has_just_been_pressed(self, x):
+        self.just_pressed = x
+
     def lift(self):
         self.up = True
 
@@ -72,3 +76,6 @@ class Intake:
 
     def stop_save_rolling(self):
         self.save_rolling = False
+
+    def toggle_rolling(self):
+        self.rolling = not self.rolling
